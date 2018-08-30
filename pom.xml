@@ -559,15 +559,15 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
+               <!-- <configuration>
                     <mainClass>${start-class}</mainClass>
                     <executable>true</executable>
                     <fork>true</fork>
-                    <!--
+                    &lt;!&ndash;
                     Enable the line below to have remote debugging of your application on port 5005
                     <jvmArguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</jvmArguments>
-                    -->
-                </configuration>
+                    &ndash;&gt;
+                </configuration>-->
             </plugin>
             <plugin>
                 <groupId>com.spotify</groupId>
@@ -613,9 +613,9 @@
                             <goal>tag</goal>
                             <goal>push</goal>
                         </goals>
-                        <configuration>
+                        <!--<configuration>
                             <tag>${git.commit.id.describe}</tag>
-                        </configuration>
+                        </configuration>-->
                     </execution>
                 </executions>
                 <configuration>
@@ -742,10 +742,10 @@
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <version>${spring-boot.version}</version>
-                        <configuration>
+                        <!--<configuration>
                             <mainClass>${start-class}</mainClass>
                             <executable>true</executable>
-                        </configuration>
+                        </configuration>-->
                         <executions>
                             <execution>
                                 <goals>
@@ -819,16 +819,16 @@
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <version>${spring-boot.version}</version>
-                        <configuration>
+                        <!--<configuration>
                             <mainClass>${start-class}</mainClass>
                             <executable>true</executable>
                             <fork>true</fork>
                             <addResources>true</addResources>
-                            <!--
+                            &lt;!&ndash;
                             Enable the line below to have remote debugging of your application on port 5005
                             <jvmArguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</jvmArguments>
-                            -->
-                        </configuration>
+                            &ndash;&gt;
+                        </configuration>-->
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -845,34 +845,34 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>net.alchim31.maven</groupId>
-                        <artifactId>scala-maven-plugin</artifactId>
-                        <version>${scala-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>compile</id>
-                                <phase>compile</phase>
-                                <goals>
-                                    <goal>add-source</goal>
-                                    <goal>compile</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>test-compile</id>
-                                <phase>test-compile</phase>
-                                <goals>
-                                    <goal>add-source</goal>
-                                    <goal>testCompile</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <recompileMode>incremental</recompileMode>
-                            <verbose>true</verbose>
-                            <scalaVersion>${scala.version}</scalaVersion>
-                        </configuration>
-                    </plugin>
+                    <!--<plugin>-->
+                        <!--<groupId>net.alchim31.maven</groupId>-->
+                        <!--<artifactId>scala-maven-plugin</artifactId>-->
+                        <!--<version>${scala-maven-plugin.version}</version>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<id>compile</id>-->
+                                <!--<phase>compile</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>add-source</goal>-->
+                                    <!--<goal>compile</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                            <!--<execution>-->
+                                <!--<id>test-compile</id>-->
+                                <!--<phase>test-compile</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>add-source</goal>-->
+                                    <!--<goal>testCompile</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                        <!--<configuration>-->
+                            <!--<recompileMode>incremental</recompileMode>-->
+                            <!--<verbose>true</verbose>-->
+                            <!--<scalaVersion>${scala.version}</scalaVersion>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
                 </plugins>
             </build>
             <properties>
