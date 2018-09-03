@@ -16,12 +16,12 @@ import static org.hibernate.jpa.QueryHints.HINT_FETCH_SIZE;
 public interface ContactRepository extends JpaRepository<Contact, Integer> {
 
     //name = HINT_FETCH_SIZE, value = ""+Integer.MIN_VALUE this means that data will process row by row from db
-    //and GC will clear variables faster. For PostgreSQL value should = 1
-    @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = ""+Integer.MIN_VALUE))
+    //and GC will clear variables faster. For MySQL value should = ""+Integer.MIN_VALUE
+    @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "1"))
     @Query(value = "select t from Contact t")
     Stream<Contact> streamAll();
 
-    @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = ""+Integer.MIN_VALUE))
+    @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "1"))
     @Query("select c from Contact c where c.id between :minId and :maxId")
     Stream<Contact> findAllByBetweenId(@Param("minId") Integer minId, @Param("maxId") Integer maxId);
 }

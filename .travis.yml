@@ -3,7 +3,6 @@ jdk: oraclejdk8
 install: true
 branches:
   only:
-  - master
   - dev
 
 before_script:

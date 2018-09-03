@@ -4,13 +4,12 @@
  ./mvnw or mvnw
  
  #To create test db
- You should create schema in your local mysql db:
- url: jdbc:mysql://localhost:3306/get_contact?useUnicode=true&characterEncoding=utf8&useSSL=false
- 
+ You should create schema in your local db:
+ url: jdbc:postgresql://localhost:5432/postgres
  Then change username and password in application-dev.
- 
- Then ran script from resources/schema.sql for  fill table test data.
- Table will be created automatically by liquibase.
+ Start application and liquibase create table automatically. Then 
+ Then ran script to populate random test data:
+ insert into contact values ( generate_series(1,1000000), md5(random()::text));
  
 #To test
  You could use swagger:

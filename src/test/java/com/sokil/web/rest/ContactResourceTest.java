@@ -17,6 +17,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.util.List;
+
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -51,21 +53,23 @@ public class ContactResourceTest {
 
     @Before
     public void initTest() {
+        contactRepository.deleteAll();
         contact = createContacts();
     }
 
     @Test
-    @Ignore
+    //@Ignore
     public void getContactsNotMatchedWithRegEx()throws Exception {
         // Initialize the database
         contactRepository.saveAndFlush(contact);
+        List<Contact> list = contactRepository.findAll();
 
         // Get all the companies
-        restContactMockMvc.perform(get("/api//hello/contacts?nameFilter=^A.*$"))
+        restContactMockMvc.perform(get("/api/hello/contacts?nameFilter=^A.*$"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(1)))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(contact.getName())));
+            .andExpect(jsonPath("$.contacts.[*].Contact.id").value(hasItem(contact.getId())))
+            .andExpect(jsonPath("$.contacts.[*].Contact.name").value(hasItem(contact.getName())));
     }
 
 

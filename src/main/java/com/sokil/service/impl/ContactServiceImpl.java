@@ -24,7 +24,8 @@ public class ContactServiceImpl implements IContactService{
     public List<Contact> findAllNotMatchWithRegEx(String regEx) {
         return contactRepository
             .streamAll()
-            .filter(contact -> !contact.getName().matches(regEx))
+            .filter(contact ->
+                !contact.getName().matches(regEx))
             .collect(Collectors.toList());
     }
 
@@ -33,7 +34,8 @@ public class ContactServiceImpl implements IContactService{
     public List<Contact> findAllNotMatchWithRegEx(String regEx, Integer minId, Integer maxId) {
         return contactRepository
             .findAllByBetweenId(minId, maxId)
-            .filter(contact -> !contact.getName().matches(regEx))
+            .filter(contact ->
+                !contact.getName().matches(regEx))
             .collect(Collectors.toList());
     }
 
