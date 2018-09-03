@@ -1,9 +1,8 @@
 package com.sokil.config;
 
-import com.sokil.security.*;
-import com.sokil.security.jwt.*;
-
-import org.springframework.context.annotation.Bean;
+import com.sokil.security.AuthoritiesConstants;
+import com.sokil.security.jwt.JWTConfigurer;
+import com.sokil.security.jwt.TokenProvider;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpMethod;

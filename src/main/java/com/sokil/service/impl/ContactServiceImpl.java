@@ -3,8 +3,6 @@ package com.sokil.service.impl;
 import com.sokil.domain.Contact;
 import com.sokil.repository.ContactRepository;
 import com.sokil.service.IContactService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

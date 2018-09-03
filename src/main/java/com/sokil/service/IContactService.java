@@ -2,7 +2,6 @@ package com.sokil.service;
 
 
 import com.sokil.domain.Contact;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
