@@ -3,7 +3,7 @@ jdk: oraclejdk8
 install: true
 branches:
   only:
-  - dev
+  - final_dev
 
 before_script:
   - chmod a+x ./mvnw
