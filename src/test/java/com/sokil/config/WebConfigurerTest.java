@@ -47,7 +47,6 @@ public class WebConfigurerTest {
 
     private JHipsterProperties props;
 
-    private MetricRegistry metricRegistry;
 
     @Before
     public void setup() {
