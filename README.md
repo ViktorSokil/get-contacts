@@ -27,7 +27,7 @@ Latest:
 
 | Status | Project | Branch | Description
 | :----- | :------ | :--- | :---
-| [![Build Status](https://travis-ci.com/ViktorSokil/get-contacts)](https://travis-ci.com/ViktorSokil/get-contacts) | get-contact | dev | Main build process.
+| [![Build Status](https://api.travis-ci.com/ViktorSokil/get-contacts.svg?branch=master)](https://travis-ci.com/ViktorSokil/get-contacts#) | get-contact | dev | Main build process.
 
 | 
 
