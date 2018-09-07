@@ -54,13 +54,4 @@ public class ContactServiceImplTest {
         assertEquals("Jasmin", contactList.get(0).getName());
     }
 
-    @Test
-    public void findAllNotMatchWithRegExBetweenTest(){
-        when(contactRepository.findAllByBetweenId(1, 2)).thenReturn(contacts.stream());
-        List<Contact> contactList = contactService.findAllNotMatchWithRegEx("^A.*$", 1, 2);
-        verify(contactRepository).findAllByBetweenId(1, 2);
-        assertEquals(1, contactList.size());
-        assertEquals("Jasmin", contactList.get(0).getName());
-    }
-
 }

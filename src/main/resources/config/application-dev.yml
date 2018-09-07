@@ -19,12 +19,6 @@ logging:
         io.github.jhipster: DEBUG
         com.sokil: DEBUG
 
-eureka:
-    instance:
-        prefer-ip-address: true
-    client:
-        service-url:
-            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
 
 spring:
     profiles:
@@ -69,12 +63,7 @@ spring:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
     thymeleaf:
         cache: false
-    zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
-        base-url: http://localhost:9411
-        enabled: false
-        locator:
-            discovery:
-                enabled: true
+
 
 # ===================================================================
 # To enable SSL, generate a certificate using:

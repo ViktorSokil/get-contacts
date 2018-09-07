@@ -3,6 +3,7 @@ package com.sokil.service.impl;
 import com.sokil.domain.Contact;
 import com.sokil.repository.ContactRepository;
 import com.sokil.service.IContactService;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,6 +35,15 @@ public class ContactServiceImpl implements IContactService{
             .findAllByBetweenId(minId, maxId)
             .filter(contact ->
                 !contact.getName().matches(regEx))
+            .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Contact> findAllNotMatchWithRegEx(String regEx, Pageable pageable) {
+        return contactRepository.streamAllPaged(pageable)
+            .filter(contact ->
+            !contact.getName().matches(regEx))
             .collect(Collectors.toList());
     }
 

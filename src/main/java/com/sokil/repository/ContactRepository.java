@@ -1,6 +1,7 @@
 package com.sokil.repository;
 
 import com.sokil.domain.Contact;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.QueryHints;
@@ -24,4 +25,8 @@ public interface ContactRepository extends JpaRepository<Contact, Integer> {
     @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "1"))
     @Query("select c from Contact c where c.id between :minId and :maxId")
     Stream<Contact> findAllByBetweenId(@Param("minId") Integer minId, @Param("maxId") Integer maxId);
+
+    @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "1"))
+    @Query(value = "select t from Contact t")
+    Stream<Contact> streamAllPaged(Pageable pageable);
 }

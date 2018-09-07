@@ -10,6 +10,7 @@
  Start application and liquibase create table automatically. Then 
  Then ran script to populate random test data:
  insert into contact values ( generate_series(1,1000000), md5(random()::text));
+ commit;
  
 #To test
  You could use swagger:
