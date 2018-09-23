@@ -10,10 +10,11 @@
  Start application and liquibase create table automatically. Then 
  Then ran script to populate random test data:
  insert into contact values ( generate_series(1,1000000), md5(random()::text));
+ commit;
  
 #To test
  You could use swagger:
- http://localhost:8081/swagger-ui.html#!/contact-resource/
+ http://localhost:8080/swagger-ui.html#!/
  
  #Main Classes with logic for task 
  domain.Contact
@@ -22,6 +23,13 @@
  service.impl.ContactServiceImpl
  web.rest.ContactResource
  
+ 
+Latest:
+
+| Status | Project | Branch | Description
+| :----- | :------ | :--- | :---
+| [![Build Status](https://api.travis-ci.com/ViktorSokil/get-contacts.svg?branch=master)](https://travis-ci.com/ViktorSokil/get-contacts#) | get-contact | Main build process.
+
  
 
 

@@ -2,7 +2,6 @@ package com.sokil.domain;
 
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class ListContactsWrapper {
     List<Contact> contacts;

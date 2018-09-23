@@ -1,12 +1,15 @@
 package com.sokil.domain;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.WRAPPER_OBJECT)
+@Table(name = "contact")
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Contact implements Serializable{
 
     private static final long serialVersionUID = 1L;
