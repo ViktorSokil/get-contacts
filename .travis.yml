@@ -5,6 +5,4 @@ branches:
   only:
   - final_dev
 
-before_script:
-  - chmod a+x ./mvnw
 
