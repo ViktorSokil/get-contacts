@@ -5,6 +5,6 @@ branches:
   only:
   - final_dev
 
-script:
-  mvnw clean install
+before_script:
+  - chmod a+x ./mvnw
 
